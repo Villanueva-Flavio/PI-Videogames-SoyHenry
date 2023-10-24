@@ -60,7 +60,7 @@ useEffect(() => {
         checkFormComplete()
     }, [form])
 
-    const [created, setCreated] = useState("");
+    const [setCreated] = useState("");
 
     const [formComplete, setFormComplete] = useState(false);
 

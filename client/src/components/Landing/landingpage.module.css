@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Tsukimi+Rounded&display=swap);
+
 *{
     overflow: hidden;
 }
@@ -20,67 +22,72 @@
     color: rgb(42, 84, 146);
 }
 
-.logoSpan{
-    position: relative;
-    display: inline-block;
-    bottom: -20px;
-    opacity: 0;
 
-}
-
-.logoSpan.active{
-    bottom: 0;
-    opacity: 1;
-    transition: ease-in-out 0.5s;
-}
-
-.logoSpan.fade{
-    bottom: 150px;
-    opacity: 0;
-    transition: ease-in-out 0.5s;
-} 
 .mainContainer{
-    background-image: url("../../assets/background2.png");
-    background-size:cover;
+    content: "";
+    background-image: url('../../assets/background-image.png');
+    z-index: 1;
+    background-size: 30vh 40%;
     background-repeat: no-repeat;
-    width: 100vw;
-    height: 100vh;
+    background-position: bottom right;
+    width: 100%;
+    height: 100%;
+    animation: neon-pulse 10s infinite alternate;
+    position: absolute;
+    filter: brightness(3000%) saturate(250%) contrast(130%);
+
     display: grid;
     grid-template-columns: 1fr; 
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
     gap: 0px 0px; 
     grid-template-areas: 
-    " logo "
-    " hero "
+    " zeroTwo "
+    " thePozzard "
     " subtitle "
     " button "
     " text "; 
-  justify-items: center;
-
+    justify-items: center;
+    overflow: hidden;
 }
-.logo {
+
+.landingPage{
+    background-image: url("../../assets/background2.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+   
+    position:relative;
+}
+
+@keyframes neon-pulse {
+    0%   { filter: drop-shadow(0px 0px 30px #ff0000); }
+    20%  { filter: drop-shadow(0px 0px 30px #ffb6c1); }
+    40%  { filter: drop-shadow(0px 0px 35px #00ff00); }
+    60%  { filter: drop-shadow(0px 0px 30px #ffb6c1); }
+    80%  { filter: drop-shadow(0px 0px 35px #0000ff); }
+    100% { filter: drop-shadow(0px 0px 35px #ffb6c1); }
+}
+
+.zeroTwo {
     margin: 30px; 
-    grid-area: logo;
-    height: 30%; 
+    grid-area: zeroTwo;
+    height: 70%; 
 }
 
 
-.hero { 
-    grid-area: hero;
-    height: 75%; 
-
+.thePozzard{ 
+    grid-area: thePozzard;
+    height: 200%;
+     
 }
-
 
 .subtitle { 
     grid-area: subtitle;
-    font-family: 'Pixelify Sans', sans-serif;
+    font-family: "Tsukimi Rounded", light;
     color: white;
     font-size:50px;
-    border: 7px inset #d457de;
-border-left: 10px groove #9d50ff;
-background-color: #9c50ff7d;
-padding: 10px;  
+    padding: 10px;  
 
 
 }
@@ -88,35 +95,10 @@ padding: 10px;
     font-weight: bold;
     color: rgb(252, 56, 209);
 }
-.button { 
-    grid-area: button;
-    font-family: 'Pixelify Sans', sans-serif;
-    font-size: 30px;
-    color: rgb(116, 27, 100);
-    width: 175px;
-    height: 55px;
-    border-radius: 25px;
-    background: rgba(141, 49, 174, 0.63);
 
-
-
-}
-
-.button:hover{
-       background: linear-gradient(90deg, rgb(221, 88, 201) 0%, rgb(189, 76, 217) 100%);
-       transition-duration: 0.7s; 
-       color: rgb(234, 4, 4);
-       
-
-}
 .text { 
-
     grid-area: text; 
     color: rgb(252, 56, 209);
-    font-family: 'Pixelify Sans', sans-serif;
+    font-family: "Tsukimi Rounded", light;
     color: #00F0FF
 }
-
-.span{
-    border-bottom: 2px solid lightblue; 
- }
