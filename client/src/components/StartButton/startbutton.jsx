@@ -5,9 +5,9 @@ import styles from './startbutton.module.css';
 const StartButton = () => {
   return (
     <NavLink to="/home">
-      <button className={styles.button} data-text="START">
-        <span className={styles.actualtext}>&nbsp;START&nbsp;</span>
-        <span aria-hidden="true" className={styles.hovertext}>&nbsp;START&nbsp;</span>
+      <button className={styles.button} data-text="HOME">
+        <span className={styles.actualtext}>&nbsp;HOME&nbsp;</span>
+        <span aria-hidden="true" className={styles.hovertext}>&nbsp;HOME&nbsp;</span>
       </button>
     </NavLink>
   );

@@ -3,17 +3,17 @@ export const validate = (data)=>{
     let errors = {};
 
     if (!data.name){
-        errors.name = "Name is required"
+        errors.name = "El nombre es obligatorio"
     } else if(data.name.length > 15){
-        errors.name = "Name is too long"
-    } else if (!regexName.test(data.name)) errors.name = "You can only use letters"
+        errors.name = "Nombre muy largo"
+    } else if (!regexName.test(data.name)) errors.name = "Solo se aceptan letras"
 
     if (!data.image){
-        errors.image = "Image is required"
+        errors.image = "Requiere foto"
     }
 
     if (!data.description) {
-        errors.description = "Description is required"
+        errors.description = "Requiere descripción"
     }
 
    
