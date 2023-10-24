@@ -1,4 +1,3 @@
-const {Videogame, Genre} = require ("../db")
 const infoTotal = require ("../controllers/infoTotal")
 const getName = require ("../controllers/getName")
 const getVideogameBd = require ("../controllers/getVideogameBd")

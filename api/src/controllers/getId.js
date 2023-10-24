@@ -1,10 +1,11 @@
 const {Videogame, Genre} = require ("../db");
-const apiKey = "558880a315b54b9bb10e2d681a2ae747";
+const { API_KEY } = process.env;
 const axios = require("axios");
 const getVideogameId = async (id) => {
     if (id > 0) {
-        const { data } = await axios.get(`https://api.rawg.io/api/games/${id}?key=${apiKey}`)
+        const { data } = await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`)
         if (!data) throw new Error(`No existe usuario con el id: "${id}.`);
+        
             const platforms = data.platforms.map(platform => platform.platform.name);
             const genresApi = data.genres.map(g => g.name);
             return {
@@ -28,9 +29,12 @@ const getVideogameId = async (id) => {
             attributes: []
           }
         }
-    });    
+      });
+
+    
 
     if (!videoGameId) throw new Error(`No existe usuario con el id: "${id}.`);
+        
         const genresApi = videoGameId.Genre.map(g => g.name);
         const dataLimpia = {
             id: videoGameId.id,
@@ -38,10 +42,11 @@ const getVideogameId = async (id) => {
             platforms: videoGameId.platforms,
             image: videoGameId.image,
             rating: videoGameId.rating,
-            releaseDate: videoGameId.releaseDate,
+            released: videoGameId.released,
             genres: genresApi,
             description: videoGameId.description
         }
+
     return dataLimpia;
 }
 

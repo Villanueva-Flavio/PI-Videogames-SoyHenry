@@ -1,0 +1,122 @@
+*{
+    overflow: hidden;
+}
+
+ .intro{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(187, 77, 77);
+    transition: 5s;
+}
+
+.text_header{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(42, 84, 146);
+}
+
+.logoSpan{
+    position: relative;
+    display: inline-block;
+    bottom: -20px;
+    opacity: 0;
+
+}
+
+.logoSpan.active{
+    bottom: 0;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+}
+
+.logoSpan.fade{
+    bottom: 150px;
+    opacity: 0;
+    transition: ease-in-out 0.5s;
+} 
+.mainContainer{
+    background-image: url("../../assets/background2.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+    " logo "
+    " hero "
+    " subtitle "
+    " button "
+    " text "; 
+  justify-items: center;
+
+}
+.logo {
+    margin: 30px; 
+    grid-area: logo;
+    height: 30%; 
+}
+
+
+.hero { 
+    grid-area: hero;
+    height: 75%; 
+
+}
+
+
+.subtitle { 
+    grid-area: subtitle;
+    font-family: 'Pixelify Sans', sans-serif;
+    color: white;
+    font-size:50px;
+    border: 7px inset #d457de;
+border-left: 10px groove #9d50ff;
+background-color: #9c50ff7d;
+padding: 10px;  
+
+
+}
+.bold{
+    font-weight: bold;
+    color: rgb(252, 56, 209);
+}
+.button { 
+    grid-area: button;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 30px;
+    color: rgb(116, 27, 100);
+    width: 175px;
+    height: 55px;
+    border-radius: 25px;
+    background: rgba(141, 49, 174, 0.63);
+
+
+
+}
+
+.button:hover{
+       background: linear-gradient(90deg, rgb(221, 88, 201) 0%, rgb(189, 76, 217) 100%);
+       transition-duration: 0.7s; 
+       color: rgb(234, 4, 4);
+       
+
+}
+.text { 
+
+    grid-area: text; 
+    color: rgb(252, 56, 209);
+    font-family: 'Pixelify Sans', sans-serif;
+    color: #00F0FF
+}
+
+.span{
+    border-bottom: 2px solid lightblue; 
+ }
