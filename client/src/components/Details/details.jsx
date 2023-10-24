@@ -17,19 +17,19 @@ const Details = () => {
       });
   }, [id]);
 
+
   return (
-    <div className={styles.details}>
-      <div className={styles.detailsText}>
-        <h1>{game.name}</h1>
-        <h3>Genres: {game.genres}</h3>
-        <h3>Rating: {game.rating}</h3>
-        <h3>Platforms: {game.platforms}</h3>
-        <h3>Release Date: {game.released}</h3>
-        <h3>Description: {game.description}</h3>
-        <img src={game.background_image} alt="Game" />
-        <Link to="/home">
-          <button>Back</button>
-        </Link>
+    <div className={styles.background}>
+      <div className={styles.details}>
+        <div className={styles.container}>
+            <div className={styles.name}>{game.name}</div>
+            <div className={styles.genres}>Genres: {game.genres}</div>
+            <div className={styles.rating}>Rating: <span className={styles.stars}>{game.rating}</span></div>
+            <div className={styles.platforms}>Platforms: {game.platforms}</div>
+            <div className={styles.released}>Release Date: {game.released}</div>
+            <div className={styles.description}>Description: {game.description}</div>
+            <div className={styles.image}><img src={game.image} alt="Game"/></div>
+        </div>
       </div>
     </div>
   );
