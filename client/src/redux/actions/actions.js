@@ -9,8 +9,16 @@ import {
     GET_GAMES_BY_GENRE,
     GET_GAMES_BY_PLATFORM,
     ORDER_BY_NAME,
-    ORDER_BY_RATING
+    ORDER_BY_RATING,
+    SEARCH_BY_NAME
 } from "./actionsType";
+
+const searchByName = (payload) => {
+    return {
+        type: SEARCH_BY_NAME,
+        payload
+    }
+}
 
 const getAllGames = () => {
     return async (dispatch) => {
@@ -137,4 +145,4 @@ const postGame = (form) =>{
     }
 }
 
-export { getAllGenres, getPlatforms, postGame, getAllGames, getGameDetail, getGamesName, getGamesByGenre, getGamesByPlatform, orderByRating, orderByName }
+export { searchByName, getAllGenres, getPlatforms, postGame, getAllGames, getGameDetail, getGamesName, getGamesByGenre, getGamesByPlatform, orderByRating, orderByName }

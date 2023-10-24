@@ -1,5 +1,5 @@
 import{
-    GET_ALL_GAMES, GET_GAME_DETAIL, GET_GAMES_NAME, GET_GAMES_BY_GENRE, GET_GAMES_BY_PLATFORM, ORDER_BY_NAME, ORDER_BY_RATING, GET_ALL_GENRES, GET_PLATFORMS
+    SEARCH_BY_NAME, GET_ALL_GAMES, GET_GAME_DETAIL, GET_GAMES_NAME, GET_GAMES_BY_GENRE, GET_GAMES_BY_PLATFORM, ORDER_BY_NAME, ORDER_BY_RATING, GET_ALL_GENRES, GET_PLATFORMS
 } from "./actions/actionsType"
 
 const initialState = {
@@ -13,6 +13,13 @@ const initialState = {
 export default function reducer ( state = initialState, {type, payload}){
     switch(type){
         
+        case SEARCH_BY_NAME:{
+            return{
+                ...state,
+                videogames: payload
+            }
+        }
+
         case GET_ALL_GAMES:{
             return{
                 ...state,
