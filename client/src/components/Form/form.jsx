@@ -122,6 +122,10 @@ useEffect(() => {
                 });  
             data = await response.json();
             imageLink = data.data.url
+            setForm({
+                ...form,
+                image: imageLink
+            })
             } catch (error) {
                 console.error('Error:', error);
                 if(imageInput.files.length > 0){
