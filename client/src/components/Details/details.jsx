@@ -31,7 +31,7 @@ const Details = () => {
             <div className={styles.platforms}>Platforms: {game.platforms}</div>
             <div className={styles.released}>Release Date: {game.released}</div>
             <div className={styles.description}>Description: {game.description}</div>
-            <div className={styles.image}><img src={game.image} alt="Game"/></div>
+            <div className={styles.image} style={{ backgroundImage: `url(${game.image})` }}></div>
         </div>
       </div>
     </div>

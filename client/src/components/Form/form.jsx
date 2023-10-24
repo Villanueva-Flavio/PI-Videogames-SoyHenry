@@ -95,7 +95,7 @@ useEffect(() => {
 
     const addPlatformToList = (e) => {  
         const selectedPlatform = document.querySelector('select[name="platforms"]').value;
-        if (selectedPlatform !== "" && !selectedPlatforms.includes(selectedPlatform) && selectedPlatforms.length < 5) {
+        if (selectedPlatform !== "" && !selectedPlatforms.includes(selectedPlatform) && selectedPlatforms.length < 6) {
             setSelectedPlatforms((prevPlatforms) => [...prevPlatforms, selectedPlatform]);
             const aux = [...selectedPlatforms]
             aux.push(selectedPlatform)
@@ -253,10 +253,8 @@ useEffect(() => {
                         </ul>
                     </div>
                 </div>
-                <div className={styles.bordeBotones}>
-                    <div className={styles.botones}>
-                        <button className={styles.submit} type='submit'> Añadir Juego </button>
-                    </div>
+                <div className={styles.botones}>
+                    <button className={styles.submit} type='submit'> Añadir Juego </button>
                 </div>
             </form>
         </div>
