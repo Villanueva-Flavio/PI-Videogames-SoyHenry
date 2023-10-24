@@ -1,35 +1,21 @@
-import React from "react";
-import styles from './Card.module.css'
-import { Link, useParams } from 'react-router-dom';
-import axios from 'axios';
-import { NavLink } from "react-router-dom";
-
-const Card = () => {
-    const [game, setGame] = useState({});
-    const { id } = useParams();
-  
-    useEffect(() => {
-      axios.get(`http://localhost:3001/videogames/${id}`)
-        .then((res) => {
-          setGame(res.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }, [id]);
-
-        return (
+import React from 'react'
+import styles from "./Card.module.css"
+import { NavLink } from 'react-router-dom/cjs/react-router-dom'
+const Card = ({id,name,platforms,rating,genres,image}) => {
+    return (
+    <div className={styles.cardContainer}>
+        <NavLink className={styles.navLink} to={/videogames/${id}}>
             <div className={styles.card}>
-                <img src={game.image} width="400px" height="250px" alt=""/>
-                <div className={styles.card-content}>
-                    <h3 className={styles.name}>{game.name}</h3>
-                    <p className={styles.genres}>{game.genres}</p>
-                    <p className={styles.rating}>⭐ {game.rating}</p>
-                 <NavLink to={`/detail/${game.id}`} className={styles.navLink}><span className={styles.leer_mas}>Leer más</span></NavLink>
-             </div>
-            </div>
-        )
+                <h1 className={styles.name}>{name}</h1>
+                <h1 className={styles.genres}>{genres}</h1>
+                <h4 className={styles.rating}>{rating}</h4>
+                <img src={image} alt={image}></img>
 
+                <h3 className={styles.platforms}>{platforms}</h3>
+            </div>
+        </NavLink>
+    </div>
+  )
 }
 
 export default Card

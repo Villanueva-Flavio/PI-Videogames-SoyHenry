@@ -9,7 +9,7 @@ html {
   box-sizing: border-box;
   height: 100vh;
   background-color: #000000;
-  background-image: radial-gradient(#11581E, #041607), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+  background-image: radial-gradient(rgba(17, 88, 30, 0.9), rgba(4, 22, 7, 0.9)), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Inconsolata', Helvetica, sans-serif;

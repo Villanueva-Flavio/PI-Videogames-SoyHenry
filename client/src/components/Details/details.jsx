@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './details.module.css';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import NotFound from "../NotFound/notfound"
 
