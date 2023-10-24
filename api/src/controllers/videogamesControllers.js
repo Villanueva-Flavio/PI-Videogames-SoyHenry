@@ -2,17 +2,14 @@ const {Videogame, Genres} = require("../db")
 const axios = require("axios")
 const {API_KEY} = process.env;
 
-
 const getVideogameBd = async ()=>{
-    //busco en mi db
-    const dataDB = await Videogame.findAll({include:{ //SELECT * FROM videogame
+    const dataDB = await Videogame.findAll({include:{
         model: Genres,
         attributes: ["name"],
         through: {
             attributes: []
         }
     }});
-// mapeo la data encontrada en el db
     const cleanData =  dataDB.map((clean) =>{
         const genresApi = clean.Genres.map(g => g.name);
         return {
@@ -27,15 +24,12 @@ const getVideogameBd = async ()=>{
     return cleanData;
 };
 
-
 const getVideogamesApi = async () => {
-    // const videogameValidate = await Videogame.findAll();
-    // if (videogameValidate.length = 0){
             let url =`https://api.rawg.io/api/games?key=3fd86bfcbc28470abf3860189f3f7384`;
             let vGames = [];
            try {
-            for (let i=0; 1<5; 1++) { // se recorre el array con un for
-            const respuesta = await axios.get(url) // se realiza la peticion
+            for (let i=0; 1<5; 1++) {
+            const respuesta = await axios.get(url)
             respuesta.data.results.map(v => {
                 vGames.push({
                     id: v.id,
@@ -49,29 +43,20 @@ const getVideogamesApi = async () => {
             url = respuesta.data.next
             }
             return vGames;
-
            } catch (error) {
             console.log("Hay un error en getVideogamesApi")
            }
 }
 
-
-// Uniendo Info de DB/API
-
 const infoTotal = async () =>{
-    // para unir mis dos variables guardo en una variable la ejecucción de mis funciones:
     const apiData = await getVideogamesApi();
     const dbData = await getVideogameBd();
-    // ahora concateno mis dos constantes contenedoras de funciones
     const allVideogames = [...apiData, ...dbData]
     return allVideogames; 
 }
 
-
-// Query
 const getName = async (name) =>{
     const nameRequest = await axios.get(`https://api.rawg.io/api/games?search=${name}&${API_KEY}`)
-
     try {
        const search = await nameRequest.data.results.map(el => {
         return {
@@ -88,8 +73,6 @@ const getName = async (name) =>{
     } catch (error) {
         console.error("Hay un error en getName")
     }
-
-
 }
 
 const getIdApi = async (id) => {

@@ -1,12 +1,9 @@
 const infoTotal = require ("../controllers/infoTotal")
 const getName = require ("../controllers/getName")
 const getVideogameBd = require ("../controllers/getVideogameBd")
-
-
 const getVideogamesHandler = async (req, res, next) =>{
     const {name} = req.query;
     const response = await infoTotal(name)
-    
     if (name){
         try {
            const searchApi = await getName(name)
@@ -18,9 +15,7 @@ const getVideogamesHandler = async (req, res, next) =>{
         } catch (error) {
             next(error)
         }
-    }
-
-    else{
+    }else{
        try {
         res.status(200).json(response)
        } catch (error) {

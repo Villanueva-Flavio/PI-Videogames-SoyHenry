@@ -9,5 +9,4 @@ const getVideogameIdHandler = async (req, res) => {
     }
 }
 
-
 module.exports = getVideogameIdHandler;

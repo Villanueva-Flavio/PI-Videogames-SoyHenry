@@ -1,7 +1,6 @@
 const {Videogame, Genre} = require("../db")
 
 const getVideogameBd = async ()=>{
-    //busco en mi db
     const dataDB = await Videogame.findAll({include:{
         model: Genre,
         attributes: ["name"],
@@ -9,7 +8,6 @@ const getVideogameBd = async ()=>{
             attributes: []
         }
     }});
-// mapeo la data encontrada en el db
     const cleanData =  dataDB.map((clean) =>{
         const genresApi = clean.Genres.map(g => g.name);
         return {

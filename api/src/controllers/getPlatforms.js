@@ -1,6 +1,5 @@
 const axios = require('axios');
 const { API_KEY } = process.env;
-
 const getPlatforms = async (req, res) => {
     try {
         const response =  await axios.get(`https://api.rawg.io/api/platforms?key=${API_KEY}`)
@@ -11,9 +10,7 @@ const getPlatforms = async (req, res) => {
                 name: platform.name
             };
         });
-
         const responsePlatforms = platforms.map(platform => platform.name)
-
         console.log('Platforms imported!');
         return res.status(200).json(responsePlatforms);
     } catch (error) {

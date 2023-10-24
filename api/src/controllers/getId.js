@@ -31,10 +31,7 @@ const getVideogameId = async (id) => {
         }
       });
 
-    
-
     if (!videoGameId) throw new Error(`No existe usuario con el id: "${id}.`);
-        
         const genresApi = videoGameId.Genre.map(g => g.name);
         const dataLimpia = {
             id: videoGameId.id,
