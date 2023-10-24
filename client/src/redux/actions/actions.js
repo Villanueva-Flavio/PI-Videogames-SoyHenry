@@ -24,7 +24,6 @@ const getPlatforms = () => {
     return async (dispatch) => {
         try {
             const {data} = await axios.get("/platforms")
-            console.log(data)
             return dispatch({
                 type: GET_PLATFORMS,
                 payload:data 
@@ -39,6 +38,9 @@ const postGame = (form) =>{
     return async (dispatch) => {
         try {
             await axios.post("/videogames", form)
+            return dispatch({
+                type: POST_GAMES,
+            })
         } catch (error) {
             return console.log(error)
         }

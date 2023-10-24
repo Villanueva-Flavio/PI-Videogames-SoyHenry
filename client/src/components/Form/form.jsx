@@ -29,11 +29,9 @@ useEffect(() => {
     useEffect(()=>{
         const checkFormComplete = () => {
             if(!form.name || !form.image || !form.description || !form.platforms || !form.released || !form.rating || !form.genres){
-                console.log(form)
                 setFormComplete(false)
             } else{
                 setFormComplete(true)
-                console.log(form)
             }
         }
         checkFormComplete()
@@ -123,7 +121,6 @@ useEffect(() => {
                     body: formData
                 });  
             data = await response.json();
-            console.log(data);
             imageLink = data.data.url
             } catch (error) {
                 console.error('Error:', error);
@@ -135,9 +132,7 @@ useEffect(() => {
             }
         }
         if(formComplete){
-            console.log(imageLink);
             dispatch(postGame(form))
-        
             alert("Juego creado con éxito");
         clearForm();
         }
