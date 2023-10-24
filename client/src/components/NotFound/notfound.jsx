@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "../NotFound/notfound.module.css"
 import StartButton from "../StartButton/startbutton"
-const notfound = () => {
+const NotFound = () => {
   
   return (
     <div className={styles.notfound}>
@@ -15,4 +15,4 @@ const notfound = () => {
     </div>
  )
 }
-export default notfound
+export default NotFound

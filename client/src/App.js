@@ -2,7 +2,7 @@ import './App.css';
 import {Switch, Route} from "react-router-dom"
 import landing from './components/Landing/landingpage';
 import Form from './components/Form/form';
-import notfound from "./components/NotFound/notfound"
+import NotFound from "./components/NotFound/notfound"
 import home from "./components/Home/home"
 import details from "./components/Details/details"
 
@@ -13,7 +13,7 @@ function App() {
     <Route  path ="/form" component={Form}/>
     <Route  path ="/home" component={home}/>
     <Route  path ="/details/:id" component={details}/>
-    <Route  path ="*" component={notfound}/>
+    <Route  path ="*" component={NotFound}/>
     <Route  path ="/" component={landing}/>
    </Switch>
   );

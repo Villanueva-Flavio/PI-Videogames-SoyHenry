@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './details.module.css';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
+import NotFound from "../NotFound/notfound"
 
 const Details = () => {
   const [game, setGame] = useState({});
@@ -17,8 +18,10 @@ const Details = () => {
       });
   }, [id]);
 
-
-  return (
+    if (game.name === undefined){
+        return <div><NotFound></NotFound></div>
+    }
+    return (
     <div className={styles.background}>
       <div className={styles.details}>
         <div className={styles.container}>
