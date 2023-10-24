@@ -5,8 +5,7 @@ import { useDispatch } from 'react-redux'
 import { getAllGenres, getPlatforms, postGame } from '../../redux/actions/actions'
 import {useSelector} from "react-redux"
 import { validate } from './validate'
-import { NavLink } from "react-router-dom/cjs/react-router-dom"
-import StartButton, { startButton } from '../StartButton/startbutton.jsx'
+import StartButton from '../StartButton/startbutton.jsx'
 const Form = () => {
     const dispatch = useDispatch();
     
@@ -60,8 +59,6 @@ useEffect(() => {
         }
         checkFormComplete()
     }, [form])
-
-    const [setCreated] = useState("");
 
     const [formComplete, setFormComplete] = useState(false);
 
