@@ -6,7 +6,6 @@ const initialState = {
     allVideogames: [],
     genres: [],
     platforms: [],
-    allVideogames : [],
     videogames: [],
     videogame: []
 };
