@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from "../NotFound/notfound.module.css"
 import StartButton from "../StartButton/startbutton"
-import SideBar from "../SideBar/sidebar"
 
 const NotFound = () => {
   

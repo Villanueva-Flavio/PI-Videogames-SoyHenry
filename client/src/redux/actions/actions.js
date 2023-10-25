@@ -15,7 +15,8 @@ import {
     ORDER_BY_RATING_DESC, 
     FILTER_BY_PLATFORM, 
     FILTER_BY_GENRE,
-    SEARCH_BY_NAME
+    SEARCH_BY_NAME,
+    SET_PAGE
 } from "./actionsType";
 
 const searchByName = (payload) => {
@@ -187,8 +188,7 @@ const filterByGenre = (payload) => {
     }
 }
 
-
-const postGame = (form) =>{
+const postGame = (form) => {
     return async (dispatch) => {
         try {
             await axios.post("/videogames", form)
@@ -201,4 +201,13 @@ const postGame = (form) =>{
     }
 }
 
-export { searchByName, getAllGenres, getPlatforms, postGame, getAllGames, getGameDetail, getGamesName, getGamesByGenre, getGamesByPlatform, filterCreated, orderByNameAsc, orderByNameDesc, orderByRatingAsc, orderByRatingDesc, filterByPlatform, filterByGenre}
+const setPage = (payload) => {
+    return function (dispatch){
+      return (dispatch)({
+        type: SET_PAGE,
+        payload
+      })
+    }
+  }
+
+export { searchByName, getAllGenres, getPlatforms, postGame, getAllGames, getGameDetail, getGamesName, getGamesByGenre, getGamesByPlatform, filterCreated, orderByNameAsc, orderByNameDesc, orderByRatingAsc, orderByRatingDesc, filterByPlatform, filterByGenre, setPage}

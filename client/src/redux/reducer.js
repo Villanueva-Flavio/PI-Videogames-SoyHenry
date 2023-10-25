@@ -1,5 +1,5 @@
 import{
-    SEARCH_BY_NAME, GET_ALL_GAMES, GET_GAME_DETAIL, GET_GAMES_NAME, GET_GAMES_BY_GENRE, GET_GAMES_BY_PLATFORM, GET_ALL_GENRES, GET_PLATFORMS, FILTER_BY_CREATED, ORDER_BY_NAME_ASC, ORDER_BY_NAME_DESC,ORDER_BY_RATING_ASC,ORDER_BY_RATING_DESC, FILTER_BY_PLATFORM, FILTER_BY_GENRE
+    SEARCH_BY_NAME, GET_ALL_GAMES, GET_GAME_DETAIL, GET_GAMES_NAME, GET_GAMES_BY_GENRE, GET_GAMES_BY_PLATFORM, GET_ALL_GENRES, GET_PLATFORMS, FILTER_BY_CREATED, ORDER_BY_NAME_ASC, ORDER_BY_NAME_DESC,ORDER_BY_RATING_ASC,ORDER_BY_RATING_DESC, FILTER_BY_PLATFORM, FILTER_BY_GENRE, SET_PAGE
 } from "./actions/actionsType"
 
 const initialState = {
@@ -141,8 +141,16 @@ export default function reducer ( state = initialState, {type, payload}){
             }
         }
         
+        case SET_PAGE:{
+            return{
+                ...state,
+                currentPage: payload
+            }
+        }
+        
             default:{
                return state;
             }
+
     }
 }

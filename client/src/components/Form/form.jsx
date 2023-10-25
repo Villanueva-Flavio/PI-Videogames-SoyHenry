@@ -151,7 +151,6 @@ useEffect(() => {
                         <label className={styles.mainText}>Nombre:</label>
                             <input
                                 id='name'
-                                placeholder='Nombre'
                                 onChange={handleInputs}
                                 className={styles.input}
                                 type='text'

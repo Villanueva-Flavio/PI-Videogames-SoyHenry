@@ -13,6 +13,7 @@
     overflow: hidden;
     border-radius: 8px;
     border: 1px solid black;
+    margin-left: 10px;
 }
 
 .subContainer{
@@ -40,6 +41,14 @@
     padding: 0 10px;
     box-sizing: border-box;
     transition: ease-in-out 0.3s;
+}
+
+select::-webkit-scrollbar {
+    width: 0.3em;
+    background-color: rgba(128, 255, 128, 1);
+    box-shadow: 
+    0 0 1ex rgba(51, 255, 51, 1),
+    0 0 2px rgba(255, 255, 255, 0.8);
 }
 
 .selects:hover{

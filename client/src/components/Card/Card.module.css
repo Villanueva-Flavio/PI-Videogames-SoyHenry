@@ -1,28 +1,23 @@
+@import 'https://fonts.googleapis.com/css?family=Inconsolata';
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:sans-serif;
+    font-family: 'Inconsolata', Helvetica, sans-serif
   }
 
   .card{
-    min-height:200px;
-    width:260px;
+    height:400px;
+    width:200px;
     margin:40px 10px;
     padding:1rem;
     cursor:pointer;
-    background-color:#B5838D;
+    background-color:rgba(0, 0, 0, 0.5);
     border: 1px solid white;
-    box-shadow:  
-    0 0 5px rgb(255 240 243),
-    0 0 10px rgb(255 204 213),
-    0 0 15px rgb(255 179 193),
-    0 0 20px rgb(255 143 163),
-    0 0 25px rgb(255 117 143),
-    0 0 30px rgb(255 77 109);
-    border-radius: 10px;
-    
+    border-radius: 12px;
   }
+
   .card img{
     width:100%;
     height:160px;
@@ -31,6 +26,7 @@
     z-index:1000;
     transition:all .5s ease-in-out;
   }
+
   .card-content{
     margin:1rem 0;
     color:#222;
@@ -41,20 +37,27 @@
     transition:all .5s ease-in-out;
   }
 
-  .nombre {
+  .name {
     margin:.6rem auto;
     text-align:center;
     color: initial;
-    font-family: monospace;
-    font-size: 20px;
+    font-family: 'Inconsolata', Helvetica, sans-serif;
+    font-size: 24px;
+    color: rgba(128, 255, 128, 0.8);
+    text-shadow:
+        0 0 1ex rgba(51, 255, 51, 1),
+        0 0 2px rgba(255, 255, 255, 0.8);
   }
 
   .genres {
     font-size: 12px;
     line-height:1.8rem;
     text-align:center;
-    color: antiquewhite;
-    font-family: monospace;
+    color: rgba(128, 255, 128, 0.8);
+    text-shadow:
+        0 0 1ex rgba(51, 255, 51, 1),
+        0 0 2px rgba(255, 255, 255, 0.8);
+    font-family: 'Inconsolata', Helvetica, sans-serif
   }
 
   .rating{
@@ -62,22 +65,33 @@
     line-height:1.8rem;
     text-align:center;
     color: antiquewhite;
-    font-family: monospace;
+    font-family: 'Inconsolata', Helvetica, sans-serif
   }
 
-  .navLink {
-    width:200px;
-  padding:10px 15px;
-  display:block;
-  text-align:center;
-  margin:.6rem auto;
-  font-size:1.1rem;
-  color:#FFCDB2;
-  text-decoration:none;
-  background-color:#2b2d42;
-  border-radius:10px;
-  transition:.3s;
-  font-family:system-ui;
+  .rating:after{
+    content:'★';
+    color:gold;
+  }
+
+  .platforms{
+    font-size: 12px;
+    text-align: center;
+    color: rgba(128, 255, 128, 0.8);
+    text-shadow:
+        0 0 1ex rgba(51, 255, 51, 1),
+        0 0 2px rgba(255, 255, 255, 0.8);
+  }
+  
+  .ver{
+    opacity: 0;
+    color: rgba(255, 26, 26, 1);
+    text-shadow:
+        0 0 1ex rgb(185, 45, 37),
+        0 0 2px rgba(255, 255, 255, 0.8);
+  }
+
+  .card:hover .ver{
+    opacity: 1;
   }
 
   .navLink:hover{
@@ -85,8 +99,9 @@
     background-color:#000;
     box-shadow:0 0 2px 2px rgba(0,0,0,0.4);
   }
+
   .card:hover img{
-    margin-top:-60px;
+    margin-top:-80px;
     box-shadow:0 0 4px 6px rgba(0,0,0,0.3);
   }
   .card:hover>.card-content{

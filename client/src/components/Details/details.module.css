@@ -117,7 +117,24 @@
     padding-left: 20px;
     max-width: 70%;
     background-color: rgba(0, 0, 0, 0.5);
-    overflow:scroll;
+    overflow-y:scroll;
+}
+
+
+
+.description::-webkit-scrollbar {
+    width: 0.5em;
+    background-color: rgba(128, 255, 128, 1);
+    box-shadow: 
+    0 0 1ex rgba(51, 255, 51, 1),
+    0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.description::-webkit-scrollbar-thumb{
+    background-color: black;
+    box-shadow: 
+    0 0 1ex rgba(51, 255, 51, 1),
+    0 0 2px rgba(255, 255, 255, 0.8);
 }
 
 .image{

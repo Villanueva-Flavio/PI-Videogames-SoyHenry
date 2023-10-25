@@ -86,8 +86,10 @@
     margin-top: 15px;
     margin-left:auto;
     color: white;
+}
 
-
+.input::-webkit-file-upload-button{
+    display: none;
 }
 
 .listContainer{

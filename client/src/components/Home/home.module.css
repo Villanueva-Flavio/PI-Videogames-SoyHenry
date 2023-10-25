@@ -1,0 +1,56 @@
+.homeContainer{
+    background-image: url("../../assets/background2.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position:relative;
+}
+
+.bg{
+    content: "";
+    background-image: url('../../assets/background-image.png');
+    z-index: 1;
+    background-size: 30vh 40%;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    width: 100%;
+    height: 100%;
+    animation: neon-pulse 10s infinite alternate;
+    position: absolute;
+    filter: brightness(3000%) saturate(250%) contrast(130%);
+    gap: 0px 0px; 
+    justify-items: center;
+    overflow-y: scroll;
+}
+
+.bg::-webkit-scrollbar {
+    width: 0.5em;
+    background-color: rgba(128, 255, 128, 1);
+    box-shadow: 
+    0 0 1ex rgba(51, 255, 51, 1),
+    0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.bg::-webkit-scrollbar-thumb{
+    background-color: black;
+    box-shadow: 
+    0 0 1ex rgba(51, 255, 51, 1),
+    0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes neon-pulse {
+    0%   { filter: drop-shadow(0px 0px 30px #ff0000); }
+    20%  { filter: drop-shadow(0px 0px 30px #ffb6c1); }
+    40%  { filter: drop-shadow(0px 0px 35px #00ff00); }
+    60%  { filter: drop-shadow(0px 0px 30px #ffb6c1); }
+    80%  { filter: drop-shadow(0px 0px 35px #0000ff); }
+    100% { filter: drop-shadow(0px 0px 35px #ffb6c1); }
+}
+
+.cardContainer{
+    margin-left: 0%;
+    margin-top: -13.5%;
+    width: 90%;
+    position: relative;
+}
