@@ -7,9 +7,14 @@ import {
     GET_GAME_DETAIL,
     GET_GAMES_NAME,
     GET_GAMES_BY_GENRE,
-    GET_GAMES_BY_PLATFORM,
-    ORDER_BY_NAME,
-    ORDER_BY_RATING,
+    GET_GAMES_BY_PLATFORM, 
+    FILTER_BY_CREATED, 
+    ORDER_BY_NAME_ASC, 
+    ORDER_BY_NAME_DESC,
+    ORDER_BY_RATING_ASC,
+    ORDER_BY_RATING_DESC, 
+    FILTER_BY_PLATFORM, 
+    FILTER_BY_GENRE,
     SEARCH_BY_NAME
 } from "./actionsType";
 
@@ -90,19 +95,7 @@ const getGamesByPlatform = (platform) => {
     }
 }
 
-const orderByRating = (payload) => {
-    return {
-        type: ORDER_BY_RATING,
-        payload
-    }
-}
 
-const orderByName = (payload) => {
-    return {
-        type: ORDER_BY_NAME,
-        payload
-    }
-}
 
 const getAllGenres = () =>{
         return async (dispatch)=>{
@@ -127,10 +120,73 @@ const getPlatforms = () => {
                 payload:data 
             })
         } catch (error) {
-            
+            console.log(error)   
         }
     }
 }
+
+
+const filterCreated = (payload) => {
+    return {
+        type: FILTER_BY_CREATED, //ToDo
+        payload
+    }
+}
+
+const orderByNameAsc = (payload) => {
+    return {
+        type: ORDER_BY_NAME_ASC,
+        payload
+    }
+}
+
+const orderByNameDesc = (payload) => {
+    return {
+        type: ORDER_BY_NAME_DESC,
+        payload
+    }
+}
+
+const orderByRatingAsc = (payload) => {
+    return {
+        type: ORDER_BY_RATING_ASC,
+        payload
+    }
+}
+
+const orderByRatingDesc = (payload) => {
+    return {
+        type: ORDER_BY_RATING_DESC,
+        payload
+    }
+}
+
+const filterByPlatform = (payload) => {
+    return async (dispatch) => {
+        try{
+            dispatch({
+                type: FILTER_BY_PLATFORM,
+                payload
+            })
+        } catch (error) {
+            alert(error.response.data.error)
+        }
+    }
+}
+
+const filterByGenre = (payload) => {
+    return async (dispatch) => {
+        try{
+            dispatch({
+                type: FILTER_BY_GENRE,
+                payload
+            })
+        } catch (error) {
+            alert(error.response.data.error)
+        }
+    }
+}
+
 
 const postGame = (form) =>{
     return async (dispatch) => {
@@ -145,4 +201,4 @@ const postGame = (form) =>{
     }
 }
 
-export { searchByName, getAllGenres, getPlatforms, postGame, getAllGames, getGameDetail, getGamesName, getGamesByGenre, getGamesByPlatform, orderByRating, orderByName }
+export { searchByName, getAllGenres, getPlatforms, postGame, getAllGames, getGameDetail, getGamesName, getGamesByGenre, getGamesByPlatform, filterCreated, orderByNameAsc, orderByNameDesc, orderByRatingAsc, orderByRatingDesc, filterByPlatform, filterByGenre}

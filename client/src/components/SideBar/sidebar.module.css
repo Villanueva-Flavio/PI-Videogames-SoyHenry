@@ -1,0 +1,54 @@
+@import 'https://fonts.googleapis.com/css?family=Inconsolata';
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+.subContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    padding: 0 2px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.selects{
+    font-family: Inconsolata;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(128, 255, 128, 0.8);
+    text-shadow:
+        0 0 1ex rgba(51, 255, 51, 1),
+        0 0 2px rgba(255, 255, 255, 0.8);
+    padding: 0 10px;
+    box-sizing: border-box;
+    transition: ease-in-out 0.3s;
+}
+
+.selects:hover{
+    background-color: black;
+    color: white;
+    transition: ease-in-out 0.3s;
+}
+
+.selects > option{
+    font-family: Inconsolata;
+    color: rgba(128, 255, 128, 0.8);
+}
