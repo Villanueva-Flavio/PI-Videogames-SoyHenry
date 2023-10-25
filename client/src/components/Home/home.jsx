@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { getAllGenres, getAllGames } from '../../redux/actions/actions'
 import SideBar from '../SideBar/sidebar'
-import SearchBar from '../SearchBar/searchbar'
+import SearchBar from '../SearchBar/SearchBar'
 const Home = () => {
 
   const dispatch = useDispatch();

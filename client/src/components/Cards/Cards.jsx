@@ -18,11 +18,11 @@ export default function Cards() {
   const firstGameIndex = lastGameIndex - videogamesPerPage;
   const currentGames = allVideogames.slice(firstGameIndex, lastGameIndex);
 
-
   const paginado = (currentPage) => {
     dispatch(setPage(currentPage));
   };
 
+  console.log(currentGames);
 
   return (
     <div className={style.cards}>
