@@ -34,18 +34,21 @@
   }
 
 .button {
-    display: none;
-}
-
-.searchButtonSvg{
-    padding:10px;
-    border-radius: 0px 15px 15px 0px;
+    font-family: Inconsolata;
     background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 0px 15px 15px 0px;
+    color: rgba(128, 255, 128, 1);
+    padding: 12px;
+    padding-right: 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
     border: 1px solid black;
-}
-
-.searchButtonSvg:hover{
-    background-color: rgba(128, 255, 128, 1);
+    text-shadow:
+        0 0 1ex rgba(51, 255, 51, 1),
+        0 0 2px rgba(255, 255, 255, 0.8);
+    margin: 4px 2px;
     cursor: pointer;
-    transition: ease-in-out 0.3s;
 }
