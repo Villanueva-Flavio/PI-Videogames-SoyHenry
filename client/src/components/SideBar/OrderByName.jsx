@@ -17,7 +17,7 @@ const OrderByName = () => {
     return (
         <div className={styles.subContainer}>
             <select className={styles.selects} onChange={(e) => handleOrderByName(e)}>
-                <option selected="background-color: black;" value="asc">A-Z</option>
+                <option value="asc">A-Z</option>
                 <option value="desc">Z-A</option>
             </select>
         </div>

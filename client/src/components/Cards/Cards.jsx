@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import Card from "../Card/Card";
@@ -55,7 +55,7 @@ export default function Cards() {
             );
           })
         ) : (
-          <span className={style.loader}></span>
+          <span className={style.loader}>CARGANDO. . .</span>
         )}
       </div>
     </div>

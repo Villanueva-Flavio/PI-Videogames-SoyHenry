@@ -18,7 +18,7 @@ const Home = () => {
     <div className={styles.homeContainer}>
       <div className={styles.bg}>
         <SearchBar className={styles.SearchBar}/>
-          <SideBar className={styles.SideBar}></SideBar>
+        <SideBar className={styles.SideBar}></SideBar>
         <div className={styles.cardContainer}>
           <Cards className={styles.Cards}/>
         </div>
